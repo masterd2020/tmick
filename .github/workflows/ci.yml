@@ -1,0 +1,61 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: write
+
+        strategy:
+            matrix:
+                node-version: [20.x]
+
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0 # Fetch all history for changelogs/tags
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'npm'
+                  registry-url: 'https://registry.npmjs.org'
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build packages
+              run: npm run build
+
+            - name: Run tests
+              run: npm test
+
+            - name: Lint code
+              run: npm run lint:fix
+
+            - name: Configure Git for publishing
+              if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+              run: |
+                  git config --global user.name 'github-actions[bot]'
+                  git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+                  git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
+
+            - name: Commit version bumps and changelogs
+              if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+              run: |
+                  git add .
+                  git commit -m "chore(release): version bumps [skip ci]" || echo "No changes to commit"
+
+            - name: Publish packages
+              if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+              run: npm run publish-packages -- --yes
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

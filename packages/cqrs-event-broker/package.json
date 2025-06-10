@@ -1,0 +1,21 @@
+{
+	"name": "@tmasterd/cqrs-event-broker",
+	"version": "1.0.0",
+	"description": "CQRS event broker implementation",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"clean": "rimraf dist *.tsbuildinfo",
+		"test": "jest"
+	},
+	"devDependencies": {
+		"rimraf": "^4.4.1"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

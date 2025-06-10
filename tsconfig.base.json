@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "es2018",
+		"module": "commonjs",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"strict": true,
+		"composite": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"@my-monorepo/core": ["packages/core/src"],
+			"@my-monorepo/utils": ["packages/utils/src"]
+		}
+	},
+	"exclude": ["**/node_modules", "**/dist"]
+}

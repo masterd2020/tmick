@@ -1,0 +1,16 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module"
+	},
+	"rules": {
+		"indent": ["warn", "tab"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		// "no-console": "warn", // Good for catching unintentional logs
+		"no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }] // Allow unused args like (_, res)	},
+	},
+	"ignorePatterns": ["dist/"]
+}

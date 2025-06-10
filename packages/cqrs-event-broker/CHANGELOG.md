@@ -1,0 +1,10 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 1.1.0 (2025-05-22)
+
+### Features
+
+- initial npm monorepo package setup ([168e476](https://github.com/masterd2020/math-lib-monorepo/commit/168e47625cfef3a9bea0275bfef5eccc22741c45))

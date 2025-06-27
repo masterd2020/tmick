@@ -1,6 +1,9 @@
 # Tmick: A Lightweight IoC and CQRS Framework for TypeScript
 
-[![npm version](https://badge.fury.io/js/@tmasterd/cqrs-core.svg)](https://www.npmjs.com/package/@tmasterd/cqrs-core)
+[![npm version](https://img.shields.io/npm/v/@tmasterd/cqrs-core.svg)](https://www.npmjs.com/package/@tmasterd/cqrs-core)
+[![npm version](https://img.shields.io/npm/dw/@tmasterd/cqrs-core.svg)](https://www.npmjs.com/package/@tmasterd/cqrs-core)
+[![npm version](https://img.shields.io/npm/dm/@tmasterd/cqrs-core.svg)](https://www.npmjs.com/package/@tmasterd/cqrs-core)
+[![npm version](https://img.shields.io/npm/dt/@tmasterd/cqrs-core.svg)](https://www.npmjs.com/package/@tmasterd/cqrs-core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Tmick is a lightweight yet powerful Inversion of Control (IoC) and Command Query Responsibility Segregation (CQRS) framework designed for TypeScript applications. It provides a robust dependency injection container, along with patterns for building scalable and maintainable applications using CQRS principles.

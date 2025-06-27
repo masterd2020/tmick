@@ -1,6 +1,6 @@
 {
 	"name": "@tmasterd/cqrs-event-broker",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "CQRS event broker implementation",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",

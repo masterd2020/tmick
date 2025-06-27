@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2025-06-10)
+
+### Features
+
+- initial commit ([3eeb9f9](https://github.com/masterd2020/tmick/commit/3eeb9f90f405206c9c7856ca1cd2d25b5a311c7d))
+
 # 1.1.0 (2025-05-22)
 
 ### Features

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/masterd2020/tmick/compare/@tmasterd/cqrs-event-broker@1.1.0...@tmasterd/cqrs-event-broker@1.2.0) (2025-06-27)
+
+### Features
+
+- add implemetation for cqrs-core package and add a new package cqrs-demo that demonstrate ways the cqrs-core can be use ([8e35b67](https://github.com/masterd2020/tmick/commit/8e35b679c239d98f0a37ae1c539140774bd29c15))
+
 # 1.1.0 (2025-06-10)
 
 ### Features

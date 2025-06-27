@@ -9,8 +9,33 @@
 	],
 	"scripts": {
 		"build": "tsc",
-		"clean": "rimraf dist *.tsbuildinfo",
+		"clean": "rimraf --glob dist *.tsbuildinfo",
 		"test": "jest"
+	},
+	"keywords": [
+		"dependency injection",
+		"dependency",
+		"injection",
+		"ioc",
+		"container",
+		"javascript",
+		"cqrs",
+		"command query responsibility segregation",
+		"outbox pattern",
+		"typescript"
+	],
+	"engines": {
+		"node": ">= 20.0.0"
+	},
+	"author": "Fasasi Toheeb",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/masterd2020/tmick/issues"
+	},
+	"homepage": "https://github.com/masterd2020/tmick#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/masterd2020/tmick.git"
 	},
 	"devDependencies": {
 		"rimraf": "^4.4.1"

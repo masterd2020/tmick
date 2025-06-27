@@ -1,5 +1,4 @@
 {
 	"extends": "./tsconfig.base.json",
-	"references": [{ "path": "packages/core" }, { "path": "packages/utils" }],
-	"files": []
+	"references": [{ "path": "packages/cqrs-core" }, { "path": "packages/cqrs-demo" }, { "path": "packages/cqrs-event-broker" }, { "path": "packages/cqrs-outbox" }]
 }

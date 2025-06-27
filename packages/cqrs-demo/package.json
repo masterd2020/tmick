@@ -1,7 +1,7 @@
 {
-	"name": "@tmasterd/cqrs-core",
+	"name": "@tmasterd/cqrs-demo",
 	"version": "1.0.0",
-	"description": "CQRS core implementation",
+	"description": "CQRS sample demo",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
@@ -20,6 +20,7 @@
 		"container",
 		"javascript",
 		"cqrs",
+		"demo",
 		"command query responsibility segregation",
 		"typescript"
 	],
@@ -36,13 +37,15 @@
 		"type": "git",
 		"url": "git+https://github.com/masterd2020/tmick.git"
 	},
+	"dependencies": {
+		"@tmasterd/cqrs-core": "file:../cqrs-core",
+		"express": "^5.1.0"
+	},
 	"devDependencies": {
+		"@types/express": "^5.0.3",
 		"rimraf": "^4.4.1"
 	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"dependencies": {
-		"reflect-metadata": "^0.2.2"
 	}
 }

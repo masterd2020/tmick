@@ -1,0 +1,9 @@
+{
+	"extends": "./tsconfig.json", // Inherit common settings from your main tsconfig.json
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2020",
+		"types": ["jest", "node"]
+	},
+	"include": ["src/**/*", "tests/**/*"]
+}

@@ -12,9 +12,13 @@
 		"forceConsistentCasingInFileNames": true,
 		"rootDir": ".",
 		"baseUrl": ".",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 		"paths": {
-			"@my-monorepo/core": ["packages/core/src"],
-			"@my-monorepo/utils": ["packages/utils/src"]
+			"@tmasterd/cqrs-core": ["packages/cqrs-core/src"],
+			"@tmasterd/cqrs-demo": ["packages/cqrs-demo/src"],
+			"@tmasterd/cqrs-event-broker": ["packages/cqrs-event-broker/src"],
+			"@tmasterd/cqrs-outbox": ["packages/cqrs-outbox/src"]
 		}
 	},
 	"exclude": ["**/node_modules", "**/dist"]

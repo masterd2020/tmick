@@ -14,6 +14,30 @@
 		"format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
 		"publish-packages": "lerna publish --conventional-commits --yes --no-private"
 	},
+	"keywords": [
+		"dependency injection",
+		"dependency",
+		"injection",
+		"ioc",
+		"container",
+		"javascript",
+		"cqrs",
+		"command query responsibility segregation",
+		"typescript"
+	],
+	"engines": {
+		"node": ">= 20.0.0"
+	},
+	"author": "Fasasi Toheeb",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/masterd2020/tmick/issues"
+	},
+	"homepage": "https://github.com/masterd2020/tmick#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/masterd2020/tmick.git"
+	},
 	"devDependencies": {
 		"@types/jest": "^29.5.0",
 		"@types/node": "^18.15.11",

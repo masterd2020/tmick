@@ -183,10 +183,11 @@ export class Tmick {
 	 * @returns A Promise that resolves when the command handling is complete.
 	 * @throws Error if the framework is not initialized or no handler for the command.
 	 */
-	async executeCommand<T extends ICommand>(command: T): Promise<void> {
+	async executeCommand<T extends ICommand, TResult>(command: T): Promise<TResult> {
 		if (!this.initialized) {
 			throw new Error('Tmick Framework not initialized. Call initialize() first.');
 		}
+
 		return this.commandDispatcher.dispatch(command);
 	}
 

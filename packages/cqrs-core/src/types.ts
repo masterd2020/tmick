@@ -111,7 +111,7 @@ export interface IServiceContainer {
 
 export interface ICommandDispatcher {
 	registerHandler(commandName: string, handlerServiceName: ServiceIdentifier<any>): void;
-	dispatch<T extends ICommand>(command: T): Promise<void>;
+	dispatch<T extends ICommand, TResult>(command: T): Promise<TResult>;
 }
 
 export interface IQueryDispatcher {

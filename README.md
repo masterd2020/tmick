@@ -53,7 +53,7 @@ Tmick heavily relies on TypeScript decorators and the `reflect-metadata` polyfil
 // src/index.ts
 import 'reflect-metadata'; // CRITICAL: This must be the very first import!
 import { Tmick } from '@tmasterd/cqrs-core'; // Import Tmick from the package
-// ... your application code
+// ... your application code.
 ```
 
 Also, ensure your `tsconfig.json` has the following compiler options enabled:

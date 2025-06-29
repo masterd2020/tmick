@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/masterd2020/tmick/compare/@tmasterd/cqrs-core@1.2.3...@tmasterd/cqrs-core@1.2.4) (2025-06-29)
+
+**Note:** Version bump only for package @tmasterd/cqrs-core
+
 ## [1.2.3](https://github.com/masterd2020/tmick/compare/@tmasterd/cqrs-core@1.2.2...@tmasterd/cqrs-core@1.2.3) (2025-06-28)
 
 **Note:** Version bump only for package @tmasterd/cqrs-core

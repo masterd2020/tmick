@@ -1,5 +1,7 @@
 // Generic Result type that accepts any success and failure structures
 export type Result<TSuccess, TFailure> = TSuccess | TFailure;
+export type ResultSucessOnly<TSuccess> = TSuccess;
+export type ResultFailureOnly<TFailure> = TFailure;
 
 // Type guard helpers - these need to be provided by the user for their custom structures
 export interface ResultConfig<TSuccess, TFailure> {
@@ -7,6 +9,18 @@ export interface ResultConfig<TSuccess, TFailure> {
 	createFailure: <E>(message: string, errorDetails: E) => TFailure;
 	isSuccess: (result: TSuccess | TFailure) => result is TSuccess;
 	isFailure: (result: TSuccess | TFailure) => result is TFailure;
+}
+
+// Success-only configuration for cases where you only need success results
+export interface SuccessOnlyConfig<TSuccess> {
+	createSuccess: <D>(message: string, data: D) => TSuccess;
+	isSuccess: (result: TSuccess) => result is TSuccess;
+}
+
+// Failure-only configuration for cases where you only need error results
+export interface FailureOnlyConfig<TFailure> {
+	createFailure: <E>(message: string, errorDetails: E) => TFailure;
+	isFailure: (result: TFailure) => result is TFailure;
 }
 
 // Main Result handler class that works with any structure
@@ -108,6 +122,36 @@ export class ResultHandler<TSuccess, TFailure> {
 	// 		return handlers.failure(failureResult.errorDetails, failureResult.message);
 	// 	}
 	// }
+}
+
+// Success-only handler for cases where you only need to return success results
+export class SuccessOnlyHandler<TSuccess> {
+	constructor(private config: SuccessOnlyConfig<TSuccess>) {}
+
+	// Method-level generic TD (Task Data) that defaults to unknown for flexibility
+	success<TD = unknown>(message: string, data: TD): TSuccess & { data: TD } {
+		return this.config.createSuccess(message, data) as TSuccess & { data: TD };
+	}
+
+	// Type guard
+	isSuccess(result: TSuccess): result is TSuccess {
+		return this.config.isSuccess(result);
+	}
+}
+
+// Failure-only handler for cases where you only need to return error results
+export class FailureOnlyHandler<TFailure> {
+	constructor(private config: FailureOnlyConfig<TFailure>) {}
+
+	// Method-level generic TE (Task Error) that defaults to unknown for flexibility
+	failure<TE = unknown>(message: string, errorDetails: TE): TFailure & { errorDetails: TE } {
+		return this.config.createFailure(message, errorDetails) as TFailure & { errorDetails: TE };
+	}
+
+	// Type guard
+	isFailure(result: TFailure): result is TFailure {
+		return this.config.isFailure(result);
+	}
 }
 
 // Factory for a completely custom Result handler
